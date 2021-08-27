@@ -4,14 +4,22 @@
   "description": "",
   "main": "index.js",
   "dependencies": {
-    "express": "^4.16.4",
     "netlify-lambda": "^1.4.3",
-    "serverless-http": "^1.9.1"
+    "serverless-http": "^1.9.1",
+    "body-parser": "^1.19.0",
+    "compression": "^1.7.4",
+    "express": "^4.17.1",
+    "nodemon": "^2.0.12"
   },
-  "devDependencies": {},
+  "devDependencies": {
+    "@types/bcrypt": "^5.0.0",
+    "@types/express": "^4.17.13",
+    "@types/node": "^14.14.31",
+    "typescript": "^4.2.2"
+  },
   "scripts": {
-    "start": "NODE_ENV=development ./node_modules/.bin/netlify-lambda serve src",
-    "build": "NODE_ENV=production ./node_modules/.bin/netlify-lambda build src"
+    "start": "NODE_ENV=development ./node_modules/.bin/netlify-lambda serve src && tsc",
+    "build": "NODE_ENV=production ./node_modules/.bin/netlify-lambda build src && tsc"
   },
   "repository": {
     "type": "git",
